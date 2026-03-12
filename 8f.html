@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Denomination Counter</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 30px; }
+        input { padding: 10px; width: 200px; }
+        button { padding: 10px 20px; cursor: pointer; background: #28a745; color: white; border: none; }
+        #output { margin-top: 20px; text-align: left; display: inline-block; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <h2>Bank Denomination Calculator</h2>
+    <p>Enter the amount to deposit (Rs.):</p>
+    
+    <input type="number" id="amount" placeholder="e.g. 163">
+    <button onclick="calculateNotes()">Calculate Notes</button>
+
+    <div id="output"></div>
+
+    <script>
+        function calculateNotes() {
+            let total = parseInt(document.getElementById("amount").value);
+            let denominations = [100, 50, 20, 10, 5, 2, 1];
+            let resultHTML = "<strong>Breakdown:</strong><br>";
+
+            if (isNaN(total) || total <= 0) {
+                document.getElementById("output").innerHTML = "Please enter a valid amount.";
+                return;
+            }
+
+            // Loop through each denomination
+            for (let note of denominations) {
+                if (total >= note) {
+                    let count = Math.floor(total / note); // How many notes of this type
+                    total = total % note; // The remaining balance
+                    
+                    resultHTML += count + " - " + note + "'s<br>";
+                }
+            }
+
+            document.getElementById("output").innerHTML = resultHTML;
+        }
+    </script>
+
+</body>
+</html>

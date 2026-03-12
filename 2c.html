@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Lab</title>
+    <style>
+        table {
+            border: 2px solid #333;
+            padding: 15px;
+            margin: auto;
+        }
+        td {
+            padding: 8px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Portal Registration</h2>
+
+    <form action="submit_page.php" method="POST">
+        <table>
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" name="studentName" placeholder="Enter Name"></td>
+            </tr>
+
+            <tr>
+                <td>Create Password:</td>
+                <td><input type="password" name="userPass"></td>
+            </tr>
+
+            <tr>
+                <td>Roll Number:</td>
+                <td><input type="number" name="rollNo"></td>
+            </tr>
+
+            <tr>
+                <td>Date of Birth:</td>
+                <td><input type="date" name="dob"></td>
+            </tr>
+
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="m"> Male
+                    <input type="radio" name="gender" value="f"> Female
+                </td>
+            </tr>
+
+            <tr>
+                <td>Select Department:</td>
+                <td>
+                    <select name="dept">
+                        <option value="cs">Computer Science</option>
+                        <option value="ee">Electrical</option>
+                        <option value="me">Mechanical</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address:</td>
+                <td><textarea name="address" rows="3" cols="25"></textarea></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Clear All">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Object Data Loops</h2>
+
+    <h3>1. For-In Loop (Direct)</h3>
+    <div id="for-in"></div>
+
+    <h3>2. For-Each Loop (via Object.entries)</h3>
+    <div id="for-each"></div>
+
+    <h3>3. For-Of Loop (via Object.values)</h3>
+    <div id="for-of"></div>
+
+    <script>
+        // The Object
+        const student = {
+            Name: "John",
+            Age: 21,
+            Course: "Computer Science"
+        };
+
+        // --- 1. FOR-IN LOOP ---
+        // Best for objects. Loops through the keys.
+        let forInText = "";
+        for (let key in student) {
+            forInText += key + ": " + student[key] + "<br>";
+        }
+        document.getElementById("for-in").innerHTML = forInText;
+
+
+        // --- 2. FOR-EACH LOOP ---
+        // Converts object to an array of [key, value] pairs first.
+        let forEachText = "";
+        Object.entries(student).forEach(([key, value]) => {
+            forEachText += key + " -> " + value + "<br>";
+        });
+        document.getElementById("for-each").innerHTML = forEachText;
+
+
+        // --- 3. FOR-OF LOOP ---
+        // Used here to just grab the values.
+        let forOfText = "";
+        for (let val of Object.values(student)) {
+            forOfText += "Value: " + val + "<br>";
+        }
+        document.getElementById("for-of").innerHTML = forOfText;
+    </script>
+
+</body>
+</html>

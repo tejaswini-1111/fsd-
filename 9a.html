@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Number Logic Tool</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        .result-box { background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 20px; }
+        b { color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <h2>Number Operations Tool</h2>
+    <input type="number" id="userInput" placeholder="Enter a number">
+    <button onclick="calculateAll()">Process Number</button>
+
+    <div id="display" class="result-box">
+        </div>
+
+    <script>
+        // i. Factorial: n! = n * (n-1) * ... * 1
+        function getFactorial(n) {
+            if (n < 0) return "Undefined for negative numbers";
+            if (n === 0) return 1;
+            let res = 1;
+            for (let i = 2; i <= n; i++) res *= i;
+            return res;
+        }
+
+        // ii. Fibonacci series up to n
+        function getFibonacci(n) {
+            let series = [0, 1];
+            while (true) {
+                let next = series[series.length - 1] + series[series.length - 2];
+                if (next > n) break;
+                series.push(next);
+            }
+            return n < 0 ? [] : (n === 0 ? [0] : series).join(", ");
+        }
+
+        // iii. Prime numbers up to n
+        function getPrimes(n) {
+            let primes = [];
+            for (let i = 2; i <= n; i++) {
+                let isPrime = true;
+                for (let j = 2; j <= Math.sqrt(i); j++) {
+                    if (i % j === 0) { isPrime = false; break; }
+                }
+                if (isPrime) primes.push(i);
+            }
+            return primes.length > 0 ? primes.join(", ") : "None";
+        }
+
+        // iv. Palindrome check
+        function isPalindrome(n) {
+            let str = n.toString();
+            let reversed = str.split('').reverse().join('');
+            return str === reversed ? "Yes, it is a palindrome" : "No, it is not";
+        }
+
+        // Main function to display results
+        function calculateAll() {
+            const num = parseInt(document.getElementById('userInput').value);
+            const display = document.getElementById('display');
+
+            if (isNaN(num)) {
+                display.innerHTML = "Please enter a valid number.";
+                return;
+            }
+
+            display.innerHTML = `
+                <p><b>Factorial:</b> ${getFactorial(num)}</p>
+                <p><b>Fibonacci Series:</b> ${getFibonacci(num)}</p>
+                <p><b>Prime Numbers:</b> ${getPrimes(num)}</p>
+                <p><b>Palindrome:</b> ${isPalindrome(num)}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

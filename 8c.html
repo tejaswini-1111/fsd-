@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loops in JavaScript</title>
+</head>
+<body>
+
+    <h3>1. For Loop</h3>
+    <p id="for-loop"></p>
+
+    <h3>2. While Loop</h3>
+    <p id="while-loop"></p>
+
+    <h3>3. Do-While Loop</h3>
+    <p id="do-while-loop"></p>
+
+    <script>
+        // --- 1. FOR LOOP ---
+        let forResult = "";
+        for (let i = 1; i <= 10; i++) {
+            forResult += i + " ";
+        }
+        document.getElementById("for-loop").innerText = forResult;
+
+
+        // --- 2. WHILE LOOP ---
+        let whileResult = "";
+        let j = 1; // Initialization
+        while (j <= 10) { // Condition
+            whileResult += j + " ";
+            j++; // Increment
+        }
+        document.getElementById("while-loop").innerText = whileResult;
+
+
+        // --- 3. DO-WHILE LOOP ---
+        let doWhileResult = "";
+        let k = 1; // Initialization
+        do {
+            doWhileResult += k + " ";
+            k++; // Increment
+        } while (k <= 10); // Condition
+        document.getElementById("do-while-loop").innerText = doWhileResult;
+    </script>
+
+</body>
+</html>

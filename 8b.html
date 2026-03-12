@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h2>Simple Weekday Script</h2>
+
+  <script>
+    // 1. Ask the user for a number
+    let dayNumber = prompt("Enter a number (1-7):");
+
+    // 2. The Switch Case logic
+    let dayName;
+
+    switch (dayNumber) {
+      case "1": dayName = "Monday"; break;
+      case "2": dayName = "Tuesday"; break;
+      case "3": dayName = "Wednesday"; break;
+      case "4": dayName = "Thursday"; break;
+      case "5": dayName = "Friday"; break;
+      case "6": dayName = "Saturday"; break;
+      case "7": dayName = "Sunday"; break;
+      default: dayName = "Invalid Choice";
+    }
+
+    // 3. Show the result
+    alert("The day is: " + dayName);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h3>Registration Validation</h3>
+    Name: <input type="text" id="name" placeholder="Start with alpha, 6+ chars"><br><br>
+    Mobile: <input type="text" id="mobile" placeholder="10 digits"><br><br>
+    Email: <input type="text" id="email" placeholder="user@example.com"><br><br>
+    <button onclick="validate()">Register</button>
+    <p id="msg" style="color: red;"></p>
+
+    <script>
+        function validate() {
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const email = document.getElementById('email').value;
+            const msg = document.getElementById('msg');
+
+            // i. Name: Alpha start, then alphanumeric, length >= 6
+            const nameRegex = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+            
+            // ii. Mobile: Exactly 10 digits
+            const mobileRegex = /^[0-9]{10}$/;
+            
+            // iii. Email: standard@format.xxx
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!nameRegex.test(name)) {
+                msg.innerText = "Invalid Name: Must start with a letter and be at least 6 characters.";
+            } else if (!mobileRegex.test(mobile)) {
+                msg.innerText = "Invalid Mobile: Must be exactly 10 digits.";
+            } else if (!emailRegex.test(email)) {
+                msg.innerText = "Invalid Email: Follow format xxxxx@xxxx.xxx";
+            } else {
+                msg.style.color = "green";
+                msg.innerText = "Registration Successful!";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>JavaScript Output Methods</h2>
+
+    <p id="demo">This text will change.</p>
+
+    <button type="button" onclick="displayOutputs()">Show All Outputs</button>
+
+    <script>
+        function displayOutputs() {
+            // 1. innerHTML: Writing into an HTML element
+            // Best for: Updating specific parts of your webpage.
+            document.getElementById("demo").innerHTML = "1. Hello! I'm in the paragraph.";
+
+            // 2. document.write(): Writing directly into the HTML stream
+            // Best for: Quick testing (Warning: using this after page loads deletes everything else!)
+            // document.write("2. This was written with document.write()");
+
+            // 3. window.alert(): Showing an alert box
+            // Best for: Grabbing user attention or simple notifications.
+            window.alert("3. This is an alert box!");
+
+            // 4. console.log(): Writing to the browser console
+            // Best for: Debugging and developers (Press F12 to see this).
+            console.log("4. The code is working! Check the console.");
+        }
+    </script>
+
+</body>
+</html>
