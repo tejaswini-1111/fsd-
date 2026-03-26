@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User-Defined Object Demo</title>
+</head>
+<body>
+  <h3>User-Defined Object Example</h3>
+  <button onclick="showStudent()">Display Student Info</button>
+  <button onclick="updateMarks()">Update Marks</button>
+
+  <script>
+    // Constructor function
+    function Student(name, age, marks) {
+      this.name = name;       // Property
+      this.age = age;         // Property
+      this.marks = marks;     // Property
+
+      // Method
+      this.display = function() {
+        return "Name: " + this.name +
+               "\nAge: " + this.age +
+               "\nMarks: " + this.marks;
+      };
+
+      // Accessor: Getter
+      this.getMarks = function() {
+        return this.marks;
+      };
+
+      // Accessor: Setter
+      this.setMarks = function(newMarks) {
+        this.marks = newMarks;
+      };
+    }
+
+    // Create object using constructor
+    let student1 = new Student("Tejaswini", 20, 85);
+
+    // Display student info
+    function showStudent() {
+      alert(student1.display());
+    }
+
+    // Update marks using setter
+    function updateMarks() {
+      student1.setMarks(95);
+      alert("Marks updated!\n" + student1.display());
+    }
+  </script>
+</body>
+</html>

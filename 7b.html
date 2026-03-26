@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Window Demo</title>
+</head>
+<body>
+  <h3>Window Object Example</h3>
+  <button onclick="showInfo()">Show Info</button>
+  <button onclick="openWin()">Open Window</button>
+  <button onclick="closeWin()">Close Window</button>
+
+  <script>
+    let myWin;
+
+    // Using window properties
+    function showInfo() {
+      alert("Width: " + window.innerWidth +
+            "\nHeight: " + window.innerHeight +
+            "\nURL: " + window.location.href);
+    }
+
+    // Using window methods
+    function openWin() {
+      myWin = window.open("https://www.example.com", "newWin", "width=300,height=200");
+    }
+
+    function closeWin() {
+      if (myWin) {
+        myWin.close();
+      } else {
+        alert("No window is open!");
+      }
+    }
+  </script>
+</body>
+</html>

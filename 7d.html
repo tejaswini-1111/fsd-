@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Math Object Demo</title>
+</head>
+<body>
+  <h3>Math Object Example</h3>
+  <button onclick="showProperties()">Show Properties</button>
+  <button onclick="useMethods()">Use Methods</button>
+
+  <script>
+    // Demonstrating Math object properties
+    function showProperties() {
+      alert("PI value: " + Math.PI +
+            "\nEuler's number: " + Math.E +
+            "\nSquare root of 2: " + Math.SQRT2);
+    }
+
+    // Demonstrating Math object methods
+    function useMethods() {
+      let num = 25.67;
+      alert("Round: " + Math.round(num) +
+            "\nFloor: " + Math.floor(num) +
+            "\nCeil: " + Math.ceil(num) +
+            "\nRandom (0-1): " + Math.random() +
+            "\nSquare root of 16: " + Math.sqrt(16));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>String Object Demo</title>
+</head>
+<body>
+  <h3>String Object Example</h3>
+  <button onclick="showString()">Show String</button>
+  <button onclick="stringLength()">Length Property</button>
+  <button onclick="toUpper()">toUpperCase()</button>
+  <button onclick="substringDemo()">substring()</button>
+  <button onclick="indexOfDemo()">indexOf()</button>
+
+  <script>
+    let text = "Hello JavaScript";
+
+    // Show original string
+    function showString() {
+      alert("Original String: " + text);
+    }
+
+    // Property: length
+    function stringLength() {
+      alert("Length of string: " + text.length);
+    }
+
+    // Method: toUpperCase()
+    function toUpper() {
+      alert("Uppercase: " + text.toUpperCase());
+    }
+
+    // Method: substring()
+    function substringDemo() {
+      alert("Substring (0,5): " + text.substring(0,5));
+    }
+
+    // Method: indexOf()
+    function indexOfDemo() {
+      alert("Index of 'Java': " + text.indexOf("Java"));
+    }
+  </script>
+</body>
+</html>

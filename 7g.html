@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date Object Demo</title>
+</head>
+<body>
+  <h3>Date Object Example</h3>
+  <button onclick="showDate()">Show Current Date</button>
+  <button onclick="showYear()">Get Full Year</button>
+  <button onclick="showMonth()">Get Month</button>
+  <button onclick="showDay()">Get Day</button>
+  <button onclick="showTime()">Get Time</button>
+
+  <script>
+    // Create a Date object
+    let now = new Date();
+
+    // Show full date
+    function showDate() {
+      alert("Current Date: " + now);
+    }
+
+    // Method: getFullYear()
+    function showYear() {
+      alert("Year: " + now.getFullYear());
+    }
+
+    // Method: getMonth() (0 = January, 11 = December)
+    function showMonth() {
+      alert("Month (0-11): " + now.getMonth());
+    }
+
+    // Method: getDate() and getDay()
+    function showDay() {
+      alert("Date of month: " + now.getDate() +
+            "\nDay of week (0=Sunday): " + now.getDay());
+    }
+
+    // Method: getTime() (milliseconds since Jan 1, 1970)
+    function showTime() {
+      alert("Time in ms since 1970: " + now.getTime());
+    }
+  </script>
+</body>
+</html>

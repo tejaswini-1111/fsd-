@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Object Demo</title>
+</head>
+<body>
+  <h3>Array Properties and Methods Example</h3>
+  <button onclick="showArray()">Show Array</button>
+  <button onclick="addElement()">Add Element</button>
+  <button onclick="removeElement()">Remove Element</button>
+  <button onclick="sortArray()">Sort Array</button>
+
+  <script>
+    let fruits = ["Apple", "Banana", "Mango"];
+
+    // Show array and its length (property)
+    function showArray() {
+      alert("Fruits: " + fruits + "\nLength: " + fruits.length);
+    }
+
+    // Add element using push() method
+    function addElement() {
+      fruits.push("Orange");
+      alert("After push: " + fruits);
+    }
+
+    // Remove last element using pop() method
+    function removeElement() {
+      fruits.pop();
+      alert("After pop: " + fruits);
+    }
+
+    // Sort array using sort() method
+    function sortArray() {
+      fruits.sort();
+      alert("After sort: " + fruits);
+    }
+  </script>
+</body>
+</html>

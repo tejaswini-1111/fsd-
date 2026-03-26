@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RegExp Object Demo</title>
+</head>
+<body>
+  <h3>RegExp Object Example</h3>
+  <button onclick="showRegex()">Show Regex Properties</button>
+  <button onclick="testRegex()">test()</button>
+  <button onclick="execRegex()">exec()</button>
+  <button onclick="matchRegex()">match()</button>
+  <button onclick="replaceRegex()">replace()</button>
+
+  <script>
+    // Create a regex object
+    let pattern = /JavaScript/i;   // i = case-insensitive
+    let text = "I love javascript programming!";
+
+    // Show regex properties
+    function showRegex() {
+      alert("Source: " + pattern.source +
+            "\nFlags: " + pattern.flags);
+    }
+
+    // Method: test()
+    function testRegex() {
+      alert("Does text contain 'JavaScript'? " + pattern.test(text));
+    }
+
+    // Method: exec()
+    function execRegex() {
+      let result = pattern.exec(text);
+      alert("exec() result: " + result);
+    }
+
+    // Method: match()
+    function matchRegex() {
+      let result = text.match(pattern);
+      alert("match() result: " + result);
+    }
+
+    // Method: replace()
+    function replaceRegex() {
+      let result = text.replace(pattern, "JS");
+      alert("replace() result: " + result);
+    }
+  </script>
+</body>
+</html>
